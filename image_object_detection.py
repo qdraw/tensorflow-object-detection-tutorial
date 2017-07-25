@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 # coding: utf-8
 
 # # Object Detection Demo
@@ -10,11 +10,20 @@ import six.moves.urllib as urllib
 import sys
 import tarfile
 import tensorflow as tf
-import zipfile
+import cv2
+
+from pkg_resources import parse_version
+OPCV3 = parse_version(cv2.__version__) >= parse_version('3')
+
+def capPropId(prop):
+  return getattr(cv2 if OPCV3 else cv2.cv,
+    ("" if OPCV3 else "CV_") + "CAP_PROP_" + prop)
+
 
 from collections import defaultdict
 from io import StringIO
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
+
 from PIL import Image
 
 
@@ -53,19 +62,6 @@ PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
 PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map_nl.pbtxt')
 
 NUM_CLASSES = 90
-
-
-# ## Download Model
-## model already downloaded
-
-# opener = urllib.request.URLopener()
-# opener.retrieve(DOWNLOAD_BASE + MODEL_FILE, MODEL_FILE)
-# tar_file = tarfile.open(MODEL_FILE)
-# for file in tar_file.getmembers():
-#   file_name = os.path.basename(file.name)
-#   if 'frozen_inference_graph.pb' in file_name:
-#     tar_file.extract(file, os.getcwd())
-
 
 # ## Load a (frozen) Tensorflow model into memory.
 
@@ -173,11 +169,10 @@ with detection_graph.as_default():
       if len(keywords) >= 3:
           print(keywords[:-2])
 
+      while(True):
+          cv2.imshow("video output", image_np)
+          k = cv2.waitKey(10) & 0xFF
+          if k == 27:
+              break
 
-      plt.figure(figsize=IMAGE_SIZE)
-      plt.imshow(image_np)
-      plt.savefig(image_path.split('.')[0] + '_labeled.jpg')
-    #   plt.show()
-
-
-# In[ ]:
+      cv2.destroyAllWindows()
