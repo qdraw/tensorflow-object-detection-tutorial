@@ -174,7 +174,7 @@ Ubuntu - $ pkill python
 Mac OS - $ pkill Python
 ```
 
-[Objectherkenning met de Computer Vision library Tensorflow - Demo, uitzicht](https://raw.githubusercontent.com/qdraw/tensorflow-object-detection-tutorial/master/test_images/example_webcam_640px.gif "Objectherkenning met de Computer Vision library Tensorflow - Demo")
+![Objectherkenning met de Computer Vision library Tensorflow - Demo, uitzicht](https://raw.githubusercontent.com/qdraw/tensorflow-object-detection-tutorial/master/test_images/example_webcam_640px.gif "Objectherkenning met de Computer Vision library Tensorflow - Demo")
 
 _Het analyseren van het beeld van je webcam._
 
