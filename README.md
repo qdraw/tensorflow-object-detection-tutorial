@@ -174,7 +174,7 @@ Ubuntu - $ pkill python
 Mac OS - $ pkill Python
 ```
 
-<video loop="" autoplay="" muted="" webkit-playsinline="" controls="" preload="auto" poster="https://media.qdraw.nl/log//objectherkenning-met-de-computer-vision-library-tensorflow/embed/20170720-output003_1280-2pass.jpg" height="640px" width="100%"><source src="https://media.qdraw.nl/log//objectherkenning-met-de-computer-vision-library-tensorflow/embed/20170720-output003_1280-2pass.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
+[Objectherkenning met de Computer Vision library Tensorflow - Demo, uitzicht](https://raw.githubusercontent.com/qdraw/tensorflow-object-detection-tutorial/master/test_images/example_webcam_640px.gif "Objectherkenning met de Computer Vision library Tensorflow - Demo")
 
 _Het analyseren van het beeld van je webcam._
 
